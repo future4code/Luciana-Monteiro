@@ -1,0 +1,114 @@
+#garden {
+    grid-column-start: 3;
+}
+
+#garden {
+    grid-column-start: 5;
+}
+
+#garden {
+    grid-column-end: 4;
+}
+
+#garden {
+    grid-column-end: -5;
+}
+
+#garden {
+    grid-column-end: 5;
+}
+
+#garden {
+    grid-column-start: 4;
+}
+
+#garden {
+    grid-column-end: span 2;
+}
+
+#garden {
+    grid-column-end: span 5;
+}
+
+#garden {
+    grid-column-start: -4;
+}
+
+#garden {
+    grid-column: 4 / 6;
+}
+
+#garden {
+    grid-column: span 3 / 5;
+}
+
+#garden {
+    grid-row-start: 3;
+}
+
+#garden {
+    grid-row: span 3 / 6;
+}
+
+#garden {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+#garden {
+    grid-column: 2 / 6;
+    grid-row: 1 / 6;
+}
+
+#garden {
+    grid-area: 1 / 2 / 4 / 8;
+}
+
+#garden {
+    grid-area: 2 / 3 / 5 / 6;
+}
+
+#garden {
+    order: 6;
+}
+
+#garden {
+    order: -2;
+}
+
+#garden {
+    grid-template-columns: 50%;
+}
+
+#garden {
+    
+}
+
+#garden {
+    grid-template-columns: 100px 3em 40%;
+}
+
+#garden {
+    grid-template-columns: 1fr 5fr;
+}
+
+#garden {
+    grid-template-columns: 50px 1fr 1fr 1fr 50px;
+}
+
+#garden {
+    grid-template-columns: 75px 3fr 2fr;
+}
+
+#garden {
+    
+}
+
+#garden {
+    grid-template: 60% 60% / 200px;
+}
+
+#garden {
+    
+}
+

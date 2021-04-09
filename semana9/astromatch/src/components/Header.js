@@ -6,17 +6,36 @@ import {ReactComponent as ReturnIcon} from '../icons/return.svg'
 const HeaderStyled = styled.header`
   border-bottom: 1px solid grey;
   position: relative;
+  padding: 10px;
+
+  > button:first-child {
+    border: none;
+    background-color: white;
+  }
 
   > button:last-child {
-    margin-left: 90%;
+    margin-left: 100%;
     transform: translateX(-100%);
+    border: none;
+    background-color: white;
+    outline: none;
+  }
+
+  > button {
+    :hover {
+      cursor: pointer;
+      background-color: green;
+    }
+      outline: none;
   }
 `
+
 const Logo = styled.span`
   font-weight: 600;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 25px;
 
   > span:first-child {
     color: green;
@@ -32,7 +51,7 @@ export default function Header(props) {
   const showReturnButton = () => {
     if (props.page === 'matches') {
       return (
-        <button onClick={() => {props.changePage('home')}}>
+        <button onClick={() => {props.changePage('profile')}}>
           <ReturnIcon />
         </button>
       )
@@ -40,7 +59,7 @@ export default function Header(props) {
   }
 
   const showMatchesButton = () => {
-    if (props.page === 'home') {
+    if (props.page === 'profile') {
       return (
         <button onClick={() => {props.changePage('matches')}}>
           <MatchesIcon />

@@ -4,27 +4,27 @@ import {ReactComponent as MatchesIcon} from '../icons/matches.svg'
 import {ReactComponent as ReturnIcon} from '../icons/return.svg'
 
 const HeaderStyled = styled.header`
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #000133;
   position: relative;
   padding: 10px;
 
   > button:first-child {
     border: none;
-    background-color: white;
+    background-color: #D8DCD6;
   }
 
   > button:last-child {
     margin-left: 100%;
     transform: translateX(-100%);
     border: none;
-    background-color: white;
+    background-color: #D8DCD6;
     outline: none;
   }
 
   > button {
     :hover {
       cursor: pointer;
-      background-color: green;
+      background-color: #FC86AA;
     }
       outline: none;
   }
@@ -38,11 +38,11 @@ const Logo = styled.span`
   font-size: 25px;
 
   > span:first-child {
-    color: green;
+    color: #FC86AA;
   }
 
   > span:last-child {
-    color: purple;
+    color: #000133;
   }
 `
 

@@ -25,7 +25,6 @@ const Section = styled.div`
       margin-left: 10px;
       font-weight: 300;
     }
-
   }
 `
 
@@ -42,7 +41,6 @@ const ClearButton = styled.div`
     background-color: purple;
     cursor: pointer;
     color: white;
-
   }
 `
 
@@ -86,6 +84,5 @@ const getMatches = () => {
         <div>
           <ClearButton onClick={delMatches}>Excluir matches</ClearButton>
         </div>
-      
     </div>
   )}

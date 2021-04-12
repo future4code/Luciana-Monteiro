@@ -73,7 +73,7 @@ const Buttons = styled.div`
     }
   }
 `
-
+//--------------------------------MOCK------------------------------------------
 // export default function Profile (props) {
 //   const profileMock = {
 //     id: "qxUrxMGvODWZa4ZASbfwx",
@@ -100,6 +100,7 @@ const Buttons = styled.div`
 //     </div> 
 //   )
 // }
+//------------------------------------------------------------------------------
 
 export default function Profile (props) {
   const [profileToChoose, setProfileToChoose] = useState()

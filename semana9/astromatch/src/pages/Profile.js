@@ -105,11 +105,11 @@ const Buttons = styled.div`
 export default function Profile (props) {
   const [profileToChoose, setProfileToChoose] = useState()
 
-const getProfileToChoose = () => {
-  axios
-  .get(`${baseUrl}person`)
-  .then((res) => setProfileToChoose(res.data.profile))
-  .catch((err) => console.log(err))
+  const getProfileToChoose = () => {
+    axios
+    .get(`${baseUrl}person`)
+    .then((res) => setProfileToChoose(res.data.profile))
+    .catch((err) => console.log(err))
   }
 
   useEffect(() => {
@@ -131,7 +131,8 @@ const getProfileToChoose = () => {
   return (
     <div>
       <Header changePage={props.changePage} page={props.page}/>
-      {profileToChoose &&<>
+      {profileToChoose &&
+      <>
       <ProfileInfo>
         <img src={profileToChoose.photo} alt={profileToChoose.name} />
         <div>
@@ -143,7 +144,8 @@ const getProfileToChoose = () => {
         <button onClick = {() => buttonMatches(false)}>x</button>
         <button onClick = {() => buttonMatches(true)}>❤</button>
       </Buttons>
-      </>}
+      </>
+      }
     </div> 
   )
 }

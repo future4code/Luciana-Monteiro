@@ -15,7 +15,8 @@ function LoginPage() {
   const handlePassword = (event) => {
     setPassword(event.target.value)
   }
-  const login = async () => {
+  const login = async (event) => {
+    event.preventDefault()
     const body = {
       email: email,
       password: password,
@@ -37,11 +38,13 @@ function LoginPage() {
   return (
     <div>
       <h1>LoginPage</h1>
-      <input placeholder='e-mail' value={email} onChange={handleEmail}/>
-      <input placeholder='senha' value={password} onChange={handlePassword}/> 
-      <button onClick={login}>Login</button>
+      <form onSubmit ={login}>
+      <input type= 'email' placeholder='e-mail' value={email} pattern={"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"} required  onChange={handleEmail}/>
+      <input type='password' placeholder='senha' value={password} required onChange={handlePassword}/> 
+      <button>Login</button>
+      </form>
     </div>
   );
 }
 
-export default LoginPage
+export default LoginPage;

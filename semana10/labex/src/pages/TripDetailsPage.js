@@ -1,4 +1,3 @@
-
 import { BaseUrl } from "../components/baseUrl/BaseUrl"
 import axios from 'axios'
 import { useHistory, useParams } from "react-router"
@@ -105,4 +104,4 @@ function TripDetailsPage() {
   )
 }
 
-export default TripDetailsPage
+export default TripDetailsPage;

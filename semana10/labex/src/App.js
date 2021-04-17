@@ -6,7 +6,7 @@ import AdminHomePage from './pages/AdminHomePage';
 import TripDetailPage from './pages/TripDetailsPage';
 import CreateTripPage from './pages/CreateTripPage';
 import ErrorPage from './pages/ErrorPage';
-import Router from './components/Router'
+// import Router from './routes/Router'
 
 function App() {
   return (

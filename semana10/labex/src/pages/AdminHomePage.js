@@ -23,17 +23,19 @@ function AdminHomePage() {
   }, [])
 
   return (
-    <div>
+  <div>
       <h1>AdminHomePage</h1>
       <button>Criar Viagem</button>
       <button onClick={history.goBack}>Voltar</button>      
       {trips.map((trip) => {
         return(
-          <div key={trip.id} onClick={() => goToTripDetails(trip.id)}>
-            <p>
-              {trip.name}
-              <span>X</span>
-            </p>
+          <div>
+            <button key={trip.id} onClick={() => goToTripDetails(trip.id)}>
+              <p>
+                {trip.name}
+                <span>X</span>
+              </p>
+            </button>
           </div>
         )
       }) }
@@ -41,4 +43,4 @@ function AdminHomePage() {
   );
 }
 
-export default AdminHomePage
+export default AdminHomePage;

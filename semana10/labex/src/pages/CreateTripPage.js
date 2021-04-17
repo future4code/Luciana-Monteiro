@@ -6,4 +6,4 @@ function CreateTripPage() {
   );
 }
 
-export default CreateTripPage;
+export default CreateTripPage

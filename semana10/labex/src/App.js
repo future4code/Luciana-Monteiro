@@ -6,13 +6,15 @@ import AdminHomePage from './pages/AdminHomePage';
 import TripDetailPage from './pages/TripDetailsPage';
 import CreateTripPage from './pages/CreateTripPage';
 import ErrorPage from './pages/ErrorPage';
+import Router from './components/Router'
 
 function App() {
   return (
     <div>
+      
     <BrowserRouter>
       <Switch>
-
+        
         <Route exact path='/' component={ListTripsPage} />
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/trips/application' component={ApplicationFormPage} />

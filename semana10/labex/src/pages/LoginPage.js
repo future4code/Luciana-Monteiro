@@ -1,15 +1,10 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { BaseUrl } from '../components/baseUrl/BaseUrl'
-import { useHistory } from "react-router";
-
+import { useHistory } from "react-router-dom";
 
 function LoginPage() {
-  const history = useHistory()
-  
-  const goToAdminHome = () => {
-    history.push('/admin/trips/list')
-  }  
+  const history = useHistory()  
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -25,9 +20,17 @@ function LoginPage() {
       email: email,
       password: password,
     }
-    const response = await axios
-    .post(`${BaseUrl}/login, body`)
-    console.log(response)
+    const response = await 
+    axios
+    .post(`${BaseUrl}/login`, body)
+    .then((res) => {
+      console.log(res.data)
+      window.localStorage.setItem('token', res.data.token)
+      history.push('/admin/trips/list')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 
 
@@ -35,10 +38,10 @@ function LoginPage() {
     <div>
       <h1>LoginPage</h1>
       <input placeholder='e-mail' value={email} onChange={handleEmail}/>
-      <input placeholder='senha' value={password} onChange={handlePassword}/>
-      <button onClick={login, goToAdminHome}>Login</button>
+      <input placeholder='senha' value={password} onChange={handlePassword}/> 
+      <button onClick={login}>Login</button>
     </div>
   );
 }
 
-export default LoginPage;
+export default LoginPage

@@ -7,7 +7,7 @@ export const useProtectedPage = () => {
   useLayoutEffect (() => {
     const token = window.localStorage.getItem('token')
     if (!token) {
-      history.push('/')
+      history.push('/login')
     }
   }, [history])
 }

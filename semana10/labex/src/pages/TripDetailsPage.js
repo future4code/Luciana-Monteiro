@@ -2,8 +2,10 @@ import { BaseUrl } from "../components/baseUrl/BaseUrl"
 import axios from 'axios'
 import { useHistory, useParams } from "react-router"
 import { useEffect, useState } from "react"
+import { useProtectedPage } from "../components/useProtectedPage"
 
 function TripDetailsPage() {
+  useProtectedPage()
   const [trip, setTrip] = useState({})
   const params = useParams() 
   const history = useHistory()
@@ -23,7 +25,7 @@ function TripDetailsPage() {
         console.log(res.data.trip)
       })
       .catch((err) => {
-        alert('Hove um erro inesperado')
+        alert('Você não está logado')
       })
   }
   

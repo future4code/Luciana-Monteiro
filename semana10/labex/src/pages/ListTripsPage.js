@@ -1,7 +1,8 @@
 import { useHistory } from "react-router";
-// import Router from '../components/Router'
+import { useProtectedPage } from "../components/useProtectedPage";
 
 function ListTripsPage () {
+  useProtectedPage()
   const history = useHistory()
   
   const goToTripsApplication = () => {

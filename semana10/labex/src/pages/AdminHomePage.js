@@ -25,11 +25,15 @@ function AdminHomePage() {
       })
   }, [])
 
+  const goToCreateTrip = () => {
+    history.push(`/admin/trips/create`)
+  }
+
   // const deleteTrips = () => {
   //   const token = window.localStorage.getItem('token')
     
   //   axios 
-  //     .del(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/luciana-monteiro-cruz/trips/${id}`, {
+  //     .del(`${BaseUrl}/${trips.id}`, {
 
         
   //       headers: {
@@ -47,9 +51,9 @@ function AdminHomePage() {
   // }
 
   return (
-  <div>
+  <div key={trips.name}>
       <h1>AdminHomePage</h1>
-      <button>Criar Viagem</button>
+      <button onClick={goToCreateTrip}>Criar Viagem</button>
       <button onClick={history.goBack}>Voltar</button>      
       {trips.map((trip) => {
         return(

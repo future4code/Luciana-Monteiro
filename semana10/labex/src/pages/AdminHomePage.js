@@ -48,7 +48,7 @@ function AdminHomePage() {
 }
 
   return (
-  <div key={trips.name}>
+    <div key={trips.id}>
       <h1>AdminHomePage</h1>
       <button onClick={goToCreateTrip}>Criar Viagem</button>
       <button onClick={history.goBack}>Voltar</button>      
@@ -58,14 +58,14 @@ function AdminHomePage() {
             <button key={trip.id} onClick={() => goToTripDetails(trip.id)}>
               <p>
                 {trip.name}
-                <button onClick = {()=>deleteTrip(trip.id)}>Apagar</button>
               </p>
             </button>
+            <button onClick = {()=>deleteTrip(trip.id)}>Apagar</button>
           </div>
         )
       }) }
     </div>
-  );
+  )
 }
 
 export default AdminHomePage;

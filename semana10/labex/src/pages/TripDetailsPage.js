@@ -11,33 +11,33 @@ function TripDetailsPage() {
   const history = useHistory()
 
   const getTripDetails = () => {
-    const token = window.localStorage.getItem('token')
+  const token = window.localStorage.getItem('token')
 
     axios 
-      .get(`${BaseUrl}/trip/${params.id}`, {
-        headers: {
-          auth: token
-        }
-      })
-  
-      .then((res) => {
-        setTrip(res.data.trip)
-        console.log(res.data.trip)
-      })
-      .catch((err) => {
-        alert('Você não está logado')
-      })
+    .get(`${BaseUrl}/trip/${params.id}`, {
+      headers: {
+        auth: token
+      }
+    })
+
+    .then((res) => {
+      setTrip(res.data.trip)
+      console.log(res.data.trip)
+    })
+    .catch((err) => {
+      alert('Você não está logado')
+    })
   }
-  
+
   useEffect(() => {
     getTripDetails()
   }, [])
 
   const decideCandidate = (tripId, candidateId, approved) => {
-    const body = {
+  const body = {
     approve: approved
-    }
-    const token = window.localStorage.getItem('token')
+  }
+  const token = window.localStorage.getItem('token')
 
     axios
     .put(`${BaseUrl}/trips/${tripId}/candidates/${candidateId}/decide`, body,
@@ -106,4 +106,4 @@ function TripDetailsPage() {
   )
 }
 
-export default TripDetailsPage;
+export default TripDetailsPage

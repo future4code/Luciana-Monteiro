@@ -1,4 +1,4 @@
-import { useHistory, useParams } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import axios from 'axios'
 import { BaseUrl } from '../components/baseUrl/BaseUrl'
 import { useState, useEffect } from 'react'
@@ -8,7 +8,6 @@ function AdminHomePage() {
   useProtectedPage()
   const history = useHistory()
   const [trips, setTrips] = useState ([])
-  const params = useParams()
 
   const goToTripDetails = (tripId) => {
     history.push(`/admin/trips/${tripId}`)
@@ -29,26 +28,24 @@ function AdminHomePage() {
     history.push(`/admin/trips/create`)
   }
 
-  // const deleteTrips = () => {
-  //   const token = window.localStorage.getItem('token')
-    
-  //   axios 
-  //     .del(`${BaseUrl}/${trips.id}`, {
-
-        
-  //       headers: {
-  //         auth: token
-  //       }
-  //     })
-    
-  //     .then((res) => {
-  //       deleteTrips(res.data.trip)
-  //       // console.log(res.data.trip)
-  //     })
-  //     .catch((err) => {
-  //       alert('Houve um erro inesperado')
-  //     })
-  // }
+  const deleteTrip = (id) => {
+    if(window.confirm("Tem certeza que quer deletar essa viagem?")){
+    const token = window.localStorage.getItem('token') 
+    axios
+    .delete(`${BaseUrl}/trips/${id}`,
+    {   
+      headers:{
+        auth:token
+      }
+    })
+    .then(() => {
+      trips()
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+    }
+}
 
   return (
   <div key={trips.name}>
@@ -61,9 +58,7 @@ function AdminHomePage() {
             <button key={trip.id} onClick={() => goToTripDetails(trip.id)}>
               <p>
                 {trip.name}
-                
-                  {/* <button onClick={() => deleteTrips(trips.id)}>X</button> */}
-                
+                <button onClick = {()=>deleteTrip(trip.id)}>Apagar</button>
               </p>
             </button>
           </div>

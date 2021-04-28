@@ -5,11 +5,11 @@ import LoginForm from "./LoginForm"
 import { useHistory } from "react-router"
 import { goToSignUpPage } from '../../routes/coordinator'
 
-const LoginPage = () => {
+const LoginPage = ({setRightButtonText}) => {
   const history = useHistory()
   return (
     <ScreenContainer>
-      <LoginForm />
+      <LoginForm setRightButtonText={setRightButtonText} />
       <SignUpButtonContainer>
       <Button 
         onClick={() => goToSignUpPage(history)}

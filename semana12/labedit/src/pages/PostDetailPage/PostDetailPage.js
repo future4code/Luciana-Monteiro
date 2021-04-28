@@ -1,13 +1,14 @@
 import React from "react"
 import useProtectedPage from "../../hooks/useProtectedPage"
 
-const FeedPage = () => {
+const PostDetailPage = () => {
   useProtectedPage()
+
   return (
     <div>
-      <h1>FeedPage</h1>
+      <h1>PostDetailPage</h1>
     </div>
   )
 }
 
-export default FeedPage
+export default PostDetailPage

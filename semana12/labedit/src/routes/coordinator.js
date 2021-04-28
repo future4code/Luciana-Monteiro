@@ -6,10 +6,10 @@ export const goToLoginPage = (history) => {
     history.push("/pagina-de-cadastro")
   }
 
-  export const goToFeedPage = (history) => {
+  export const goToPostPage = (history) => {
     history.push("/")
   }
 
-  export const goToPostPage = (history, id) => {
-    history.push("/pagina-de-posts/${id}")
+  export const goToPostDetailPage = (history, id) => {
+    history.push("/pagina-detalhes-posts/${id}")
   }

@@ -2,10 +2,10 @@ import React from "react"
 import SignUpForm from "./SignUpForm"
 import { ScreenContainer } from './styled'
 
-const SignUpPage = () => {
+const SignUpPage = ({setRightButtonText}) => {
   return (
     <ScreenContainer>
-      <SignUpForm />     
+      <SignUpForm setRightButtonText={setRightButtonText} />     
     </ScreenContainer>
   )
 }

@@ -5,16 +5,17 @@ import useForm from "../../hooks/useForm";
 import Button from "@material-ui/core/Button";
 import { useHistory } from 'react-router-dom'
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
+import { signUp } from "../../services/user";
 
 
-const SignUpForm = () => {
+const SignUpForm = ({setRightButtonText}) => {
   useUnprotectedPage()
   const history = useHistory()
   const [form, onChange, clear] = useForm({ name: "", email: "", password: "" });
 
   const onSubmitForm = (event) => {
-    console.log(form)
     event.preventDefault();
+    signUp(form, clear, history, setRightButtonText)
   };
 
   return (

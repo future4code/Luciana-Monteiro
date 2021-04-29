@@ -24,8 +24,8 @@ const SignUpForm = ({setRightButtonText}) => {
         <h1>Cadastre-se!</h1>
         <InputsContainer>
         <TextField
-            name={"name"}
-            value={form.name}
+            name={"username"}
+            value={form.username}
             onChange={onChange}
             label={"Nome"}
             variant={"outlined"}

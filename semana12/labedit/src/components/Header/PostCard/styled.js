@@ -4,7 +4,7 @@ import CardContent from '@material-ui/core/CardContent'
 
 export const PostCardContainer = styled(Card)`
   width: 250px;
-  margin: 10px
+  margin: 10px;
 `
 
 export const PostCardContent = styled(CardContent)`

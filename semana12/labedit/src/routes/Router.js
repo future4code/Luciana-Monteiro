@@ -13,16 +13,20 @@ const Router = ({setRightButtonText}) => {
         <Route exact path="/login">
           <LoginPage setRightButtonText={setRightButtonText} />          
         </Route>
-        <Route exact path="/pagina-de-cadastro">
+
+        <Route exact path="/cadastro">
           <SignUpPage setRightButtonText={setRightButtonText} />          
         </Route>
+
         <Route exact path="/">
           <PostPage />          
         </Route>
-        <Route>
+        
+        <Route exact path="/detalhes/:id">
           <PostDetailPage />          
         </Route>
-        <Route exact path="/pagina-detalhes-posts/:id">
+
+        <Route>
           <ErrorPage />          
         </Route>
       </Switch>

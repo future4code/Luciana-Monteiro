@@ -3,7 +3,7 @@ export const goToLoginPage = (history) => {
 }
 
   export const goToSignUpPage = (history) => {
-    history.push("/pagina-de-cadastro")
+    history.push("/cadastro")
   }
 
   export const goToPostPage = (history) => {
@@ -11,5 +11,5 @@ export const goToLoginPage = (history) => {
   }
 
   export const goToPostDetailPage = (history, id) => {
-    history.push("/pagina-detalhes-posts/${id}")
+    history.push(`/detalhes/${id}`)
   }

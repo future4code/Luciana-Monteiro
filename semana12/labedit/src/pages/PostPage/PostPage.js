@@ -5,11 +5,13 @@ import { BASE_URL } from "../../constants/url"
 import useProtectedPage from "../../hooks/useProtectedPage"
 import useRequestData from '../../hooks/useRequestData'
 import { goToPostDetailPage } from "../../routes/coordinator"
+import { PostListContainer } from "./styled"
 
 
 const PostPage = () => {
   useProtectedPage()
   const history = useHistory()
+
 
   const posts = useRequestData([], `${BASE_URL}/posts`)
   console.log(posts)
@@ -24,18 +26,20 @@ const PostPage = () => {
       <PostCard
         key={post.post_id}
         title={post.title}
-        image={post.image}
         onClick={()=>onClickCard(post.post_id)}
       />
     )
   })
 
 
+
+
+
   return (
-    <div>
+    <PostListContainer>
       <h1>PostPage</h1>
       {postCards}
-    </div>
+    </PostListContainer>
   )
 }
 
